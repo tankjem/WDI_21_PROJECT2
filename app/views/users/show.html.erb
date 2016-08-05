@@ -1,0 +1,8 @@
+<% if @user.profile_picture.url %>
+  <%= image_tag @user.profile_picture.url %>
+<% else %>
+  <img src="http://fillmurray.com/200/300">
+<% end %>
+<br>
+<h1><%= @user.username %></h1>
+<h3><%= @user.email %></h3>
