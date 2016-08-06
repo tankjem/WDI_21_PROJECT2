@@ -1,8 +1,8 @@
-<% if @user.profile_picture.url %>
-  <%= image_tag (@user.profile_picture.thumb.url) %>
-<% else %>
-  <img src="http://fillmurray.com/200/300">
-<% end %>
 <br>
-<h1><%= @user.username %></h1>
-<h3><%= @user.email %></h3>
+<div class="card card-block">
+
+      <%= image_tag (@user.profile_picture.thumb.url) %>
+  <br>
+    <h1 class="card-title"><%= @user.username %></h1>
+    <h5 class="card-text"><%= @user.email %></h5>
+</div>
