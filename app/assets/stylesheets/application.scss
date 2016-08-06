@@ -15,10 +15,11 @@
  *= require_tree .
  *= require_self
  */
+
 body {
  margin: 0 auto;
  color: white;
-
+ background-color: black;
  -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;
 }
@@ -80,7 +81,12 @@ button {
   border-radius: 5px;
   padding: 10px 20px;
 }
-
+.notice {
+  background-color: black;
+}
+.alert {
+  background-color: black;
+}
 
 .nav-item {
  margin-top: 7px;
@@ -89,4 +95,5 @@ button {
 width: 30%;
 height: auto;
 text-align: center;
+border-radius: 5px;
 }
