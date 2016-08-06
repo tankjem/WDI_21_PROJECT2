@@ -2481,3 +2481,58 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 59ms (Views: 37.3ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for ::1 at 2016-08-06 11:12:31 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 4106ms (Views: 4085.9ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/users/7" for ::1 at 2016-08-06 11:12:39 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 52ms (Views: 43.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/7" for ::1 at 2016-08-06 11:13:44 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 59ms (Views: 56.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-08-06 11:13:47 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 69ms (Views: 65.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/about" for ::1 at 2016-08-06 11:13:49 +0100
+Processing by StaticsController#about as HTML
+  Rendering statics/about.html.erb within layouts/application
+  Rendered statics/about.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 59ms (Views: 56.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/7" for ::1 at 2016-08-06 11:13:50 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 69ms (Views: 60.6ms | ActiveRecord: 4.5ms)
+
+
