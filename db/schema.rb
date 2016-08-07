@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160807095646) do
+ActiveRecord::Schema.define(version: 20160807123228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "genres", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genres_posts", id: false, force: :cascade do |t|
+    t.integer "genre_id", null: false
+    t.integer "post_id",  null: false
+  end
+
+  create_table "platforms", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "platforms_posts", id: false, force: :cascade do |t|
+    t.integer "platform_id", null: false
+    t.integer "post_id",     null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "game"
