@@ -9,3 +9,21 @@
     </div>
   </div>
 </div>
+<br>
+<div class="container">
+  <div class="card-deck-wrapper">
+    <div class="card-deck"> 
+    
+      <div id=image-card class="card">
+      
+      <h1 class="card-title"><%= @post.game %></h1>
+        <br>
+          <%=image_tag (@post.image.detail.url) %>
+            <div class="card-block"> 
+              <br>
+                   <h5 class="card-text"><%= @post.description %></h5>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
