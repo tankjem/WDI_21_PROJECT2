@@ -26,6 +26,14 @@
     <%= f.text_area :description %>
   </div>
 
+  <fieldset class="form-group">
+      <%= collection_check_boxes(:post, :genre_ids, Genre.all, :id, :name) %>
+  </fieldset>
+
+  <fieldset class="form-group">
+      <%= collection_check_boxes(:post, :platform_ids, Platform.all, :id, :name) %>
+  </fieldset>
+
 
   <div class="actions">
     <%= f.submit %>
