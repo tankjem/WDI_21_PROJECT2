@@ -31,6 +31,8 @@ genre13 = Genre.create(name:"MMO")
 genre14 = Genre.create(name:"Strategy")
 genre15 = Genre.create(name:"Fighting")
 genre16 = Genre.create(name:"Horror")
+genre17 = Genre.create(name:"Platformer")
+genre18 = Genre.create(name:"Other")
 
 platform1 = Platform.create(name:"PC")
 platform2 = Platform.create(name:"Xbox")
@@ -40,6 +42,7 @@ platform5 = Platform.create(name:"Xbox One")
 platform6 = Platform.create(name:"PS3")
 platform7 = Platform.create(name:"PS4")
 platform8 = Platform.create(name:"Mobile Games")
+platform9 = Platform.create(name:"Other")
 
 user1 = User.create(username:"tanquo",
 email:"t@t.com",
