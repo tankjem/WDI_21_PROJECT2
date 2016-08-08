@@ -7,6 +7,9 @@
           <div class="card-block"> 
       <br>
               <h3 class="card-text"><%= post.description %></h3>
+              
+              <h4 class="card-text"><%= post.genres.map{ |x| x.name }.join(", ") %></h4>
+              <h4 class="card-text"><%= post.platforms.map { |x| x.name }.join(", ") %></h4>
                 <h5 class="card-text"><%= post.user.username %></h5>
                 <h6 class="card-text"><%= link_to 'Show', post %>
                 <% if post.user_id  == current_user.id %>
