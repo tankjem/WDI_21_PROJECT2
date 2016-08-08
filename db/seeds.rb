@@ -41,7 +41,10 @@ platform6 = Platform.create(name:"PS3")
 platform7 = Platform.create(name:"PS4")
 platform8 = Platform.create(name:"Mobile Games")
 
-user1 = User.Create(username:axel, email:"axel@axel.com", password:"password", password_confirmation:"password")
+user1 = User.Create(username:axel,
+email:"axel@axel.com",
+password:"password", 
+password_confirmation:"password")
 
 
 
