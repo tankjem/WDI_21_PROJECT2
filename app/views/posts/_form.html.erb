@@ -11,20 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <fieldset class="form-group">
     <%= f.label :game %>
-    <%= f.text_field :game %>
-  </div>
+    <%= f.text_field :game, class:"form-control" %>
+  </fieldset>
 
-  <div class="field">
+  <fieldset class="form-group">
     <%= f.label :image %>
-    <%= f.file_field :image %>
-  </div>
+    <%= f.file_field :image, class:"form-control" %>
+  </fieldset>
 
-  <div class="field">
+  <fieldset class="form-group">
     <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+    <%= f.text_area :description,class:"form-control" %>
+  </fieldset>
 
   <fieldset class="form-group">
       <%= collection_check_boxes(:post, :genre_ids, Genre.all, :id, :name) %>

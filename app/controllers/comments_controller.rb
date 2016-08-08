@@ -5,9 +5,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @post = Post.find_by_id(session[:current_post_id])
+    @post = Post.find_by_id(comment_params[:post_id])
       @comment = current_user.comments.new(comment_params)
-      @comment.post_id = session[:current_post_id]
       respond_to do |format|
         if @comment.save
           format.html { redirect_to @post, notice: 'Comment was successfully created.' }
@@ -23,7 +22,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
       @comment.destroy
       respond_to do |format|
-        format.html { redirect_to Post.find_by_id(session[:current_post_id]), notice: 'Comment was successfully destroyed.' }
+        format.html { redirect_to Post.find_by_id(params[:post_id]), notice: 'Comment was successfully destroyed.' }
         format.json { head :no_content }
       end
   end
@@ -36,6 +35,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:title, :content)
+      params.require(:comment).permit(:title, :content, :post_id)
     end
 end

@@ -1,31 +1,20 @@
-<p>
-  <strong>Game:</strong>
-  <%= @post.game %>
-</p>
-
-<p>
-  <strong>Image:</strong>
+<br>
+<div class="card-deck">
+<div class ="card card-block">
+  <h1 class="card-title"><%= @post.game %></h1>
   <%= image_tag (@post.image.detail.url) %>
-</p>
+<br>
 
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
-<p>
-  <strong>Genres:</strong>
-  <%= @post.genres.map{ |x| x.name }.join(", ") %>
-</p>
-<p>
-  <strong>Platforms:</strong>
-  <%= @post.platforms.map{ |x| x.name }.join(", ") %>
-</p>
+  <h3 class="card-text"><%= @post.description %></h3>
+  
+  <h4 class="card-text">Genres:<%= @post.genres.map{ |x| x.name }.join(", ") %></h4>
+  <h4 class="card-text">Platforms:<%= @post.platforms.map{ |x| x.name }.join(", ") %></h4>  
 
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user.username %>
-</p>
+
+  <h6 class="card-text"><%= @post.user.username %></h6>
+  
+
 
 
 <% if @post.user == current_user %>
@@ -34,3 +23,5 @@
 
 <% end %>
 <%= link_to 'Back', posts_path %>
+</div>
+</div>

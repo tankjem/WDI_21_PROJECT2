@@ -11,7 +11,6 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @comment = Comment.new
-    session[:current_post_id] = params[:id]
   end
 
   # GET /posts/new
@@ -56,9 +55,6 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post.comments.each do |comment|
-      comment.destroy
-    end
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }

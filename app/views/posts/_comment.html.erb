@@ -5,13 +5,15 @@
       <p><%=comment.content %></p>
       <p><small>Added by <%= comment.user.username %></small></p>
       <% if @post.user_id  == current_user.id %>
-      <h5> <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
+      <h5> <%= link_to 'Destroy', comment_path(comment, post_id: @post.id), method: :delete, data: { confirm: 'Are you sure?' } %></h5>
       <% end %>
 </div>
   <% end %>
 <br>
 <h1>New Comment:</h1>
 <%= form_for(comment) do |f| %>
+
+<%= f.hidden_field :post_id, value: @post.id %>
   
 <fieldset class="form-group">
   <%= f.label :title %><br />
