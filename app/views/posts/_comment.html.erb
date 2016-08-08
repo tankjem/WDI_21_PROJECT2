@@ -4,10 +4,13 @@
       <h3><%=comment.title %></h3>
       <p><%=comment.content %></p>
       <p><small>Added by <%= comment.user.username %></small></p>
+      <% if @post.user_id  == current_user.id %>
+      <h5> <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
+      <% end %>
 </div>
   <% end %>
 <br>
-<h1>Comments new</h1>
+<h1>New Comment:</h1>
 <%= form_for(comment) do |f| %>
   
 <fieldset class="form-group">

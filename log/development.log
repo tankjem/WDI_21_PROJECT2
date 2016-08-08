@@ -21681,3 +21681,755 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 92ms (Views: 84.0ms | ActiveRecord: 3.5ms)
 
 
+Started GET "/posts/1" for ::1 at 2016-08-08 15:31:14 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_show.html.erb (44.3ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_comment.html.erb (8.5ms)
+  Rendered posts/show.html.erb within layouts/application (55.4ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 135ms (Views: 103.4ms | ActiveRecord: 5.8ms)
+
+
+Started DELETE "/comments/1" for ::1 at 2016-08-08 15:31:19 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rEhF3ikv5H/QBn3VhAD3ggDRBt52lfppMEQ/seGcZAK42Rao62NKmEyCtmnUQrv7+qgXHkRd3xlRpTp25IaZNw==", "id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/comments_controller.rb:23:in `destroy'
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.9ms)
+Started GET "/posts/1" for ::1 at 2016-08-08 15:33:47 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_show.html.erb (8.8ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_comment.html.erb (136.6ms)
+  Rendered posts/show.html.erb within layouts/application (148.1ms)
+Completed 500 Internal Server Error in 155ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x007fe76c174e80>:0x007fe76b783d68>
+Did you mean?  @post):
+    4:       <h3><%=comment.title %></h3>
+    5:       <p><%=comment.content %></p>
+    6:       <p><small>Added by <%= comment.user.username %></small></p>
+    7:       <% if post.user_id  == current_user.id %>
+    8:       <h5> <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
+    9:       <% end %>
+   10: </div>
+  
+app/views/posts/_comment.html.erb:7:in `block in _app_views_posts__comment_html_erb___4154160174814992477_70315957850640'
+app/views/posts/_comment.html.erb:2:in `_app_views_posts__comment_html_erb___4154160174814992477_70315957850640'
+app/views/posts/show.html.erb:3:in `_app_views_posts_show_html_erb___127089358864137639_70315958632940'
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (61.3ms)
+Started GET "/posts/1" for ::1 at 2016-08-08 15:34:03 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_show.html.erb (8.2ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_comment.html.erb (5.0ms)
+  Rendered posts/show.html.erb within layouts/application (15.7ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 62ms (Views: 57.0ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/comments/1" for ::1 at 2016-08-08 15:34:10 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dJQhz3Kwivv915aqh1Bn1PWC5l2V22B+VXI1AasEDWRgBXK5sPwkHGFTXRbXEiutD/v3nacTRQ40kzDGrh7wUQ==", "id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/comments_controller.rb:23:in `destroy'
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.4ms)
+Started DELETE "/comments/1" for ::1 at 2016-08-08 15:35:25 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dJQhz3Kwivv915aqh1Bn1PWC5l2V22B+VXI1AasEDWRgBXK5sPwkHGFTXRbXEiutD/v3nacTRQ40kzDGrh7wUQ==", "id"=>"1"}
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `comment' for #<CommentsController:0x007fe771a833f0>
+Did you mean?  comment_url):
+  
+app/controllers/comments_controller.rb:23:in `destroy'
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (104.9ms)
+Started DELETE "/comments/1" for ::1 at 2016-08-08 15:36:21 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dJQhz3Kwivv915aqh1Bn1PWC5l2V22B+VXI1AasEDWRgBXK5sPwkHGFTXRbXEiutD/v3nacTRQ40kzDGrh7wUQ==", "id"=>"1"}
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `comments' for #<CommentsController:0x007fe770e2b198>
+Did you mean?  comments_url):
+  
+app/controllers/comments_controller.rb:23:in `destroy'
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.7ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (92.4ms)
+Started GET "/posts/1" for ::1 at 2016-08-08 15:36:42 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_show.html.erb (47.3ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_comment.html.erb (10.2ms)
+  Rendered posts/show.html.erb within layouts/application (60.3ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+Completed 200 OK in 138ms (Views: 111.1ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/comments/1" for ::1 at 2016-08-08 15:36:45 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JInjvB4fT5F9afbPndtG7RGBKyi2tJ2ago/LCiq4eUgwGLDK3FPhduHtPXPNmQqU6/g66IR8uOrjbs7NL6KEfQ==", "id"=>"1"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 1]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+app/controllers/comments_controller.rb:26:in `block (2 levels) in destroy'
+app/controllers/comments_controller.rb:25:in `destroy'
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.9ms)
+Started DELETE "/comments/1" for ::1 at 2016-08-08 15:37:42 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JInjvB4fT5F9afbPndtG7RGBKyi2tJ2ago/LCiq4eUgwGLDK3FPhduHtPXPNmQqU6/g66IR8uOrjbs7NL6KEfQ==", "id"=>"1"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Comment with 'id'=1):
+  
+app/controllers/comments_controller.rb:23:in `destroy'
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.9ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.9ms)
+Started GET "/posts/1" for ::1 at 2016-08-08 15:37:49 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_show.html.erb (61.2ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  Rendered posts/_comment.html.erb (5.4ms)
+  Rendered posts/show.html.erb within layouts/application (69.5ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 142ms (Views: 101.7ms | ActiveRecord: 19.2ms)
+
+
+Started POST "/comments" for ::1 at 2016-08-08 15:38:05 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N6JymNX816M9fL/0QArovKZsWupAQ+Yx8kefH5Xi9SgjMyHuF7B5RKH4dEgQSKTFXBVLKnKLw0GTpprYkPgIHQ==", "comment"=>{"title"=>"Hello", "content"=>"DESSTROY TEST"}, "commit"=>"Create Comment"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("title", "content", "user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Hello"], ["content", "DESSTROY TEST"], ["user_id", 1], ["post_id", 1], ["created_at", 2016-08-08 14:38:05 UTC], ["updated_at", 2016-08-08 14:38:05 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 16ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/posts/1" for ::1 at 2016-08-08 15:38:05 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_show.html.erb (8.6ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_comment.html.erb (6.6ms)
+  Rendered posts/show.html.erb within layouts/application (17.8ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+Completed 200 OK in 75ms (Views: 69.1ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/comments/3" for ::1 at 2016-08-08 15:38:08 +0100
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bUL7Vis6UM20U5mRnUhXrMlH/xwrrRhywLWZxB1T5wx506gg6Xb+KijXUi3NChvVMz7u3BllPQKhVJwDGEkaOQ==", "id"=>"3"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 3]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/posts/1" for ::1 at 2016-08-08 15:38:08 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_show.html.erb (7.8ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  Rendered posts/_comment.html.erb (3.2ms)
+  Rendered posts/show.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 66ms (Views: 61.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/1" for ::1 at 2016-08-08 15:39:10 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 3]]
+  Rendered collection of posts/_post.html.erb [2 times] (12.6ms)
+  Rendered users/show.html.erb within layouts/application (18.2ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 67ms (Views: 60.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/posts/3" for ::1 at 2016-08-08 15:39:14 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_show.html.erb (8.3ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  Rendered posts/_comment.html.erb (3.6ms)
+  Rendered posts/show.html.erb within layouts/application (14.2ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+Completed 200 OK in 79ms (Views: 73.5ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/comments" for ::1 at 2016-08-08 15:39:24 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SA0AYd5MGS4T9vHhQTVXWz5SQEuAmHRPlvlcmAcfDD6KfklrmlCjSePfArK7Na9lD9kgPCcrP/1xXW1m7eZ/ig==", "comment"=>{"title"=>"MONSTER", "content"=>"AAAAAAAAaaaaaah"}, "commit"=>"Create Comment"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "comments" ("title", "content", "user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "MONSTER"], ["content", "AAAAAAAAaaaaaah"], ["user_id", 1], ["post_id", 3], ["created_at", 2016-08-08 14:39:24 UTC], ["updated_at", 2016-08-08 14:39:24 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 10ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/posts/3" for ::1 at 2016-08-08 15:39:24 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_show.html.erb (11.1ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_comment.html.erb (4.6ms)
+  Rendered posts/show.html.erb within layouts/application (18.9ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 69ms (Views: 64.3ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/comments" for ::1 at 2016-08-08 15:39:45 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7aNJYxfwuQ1gJ7GVTD6oaYktQc1OTmtz6TrY5EIIHCz5MhoV1bwX6vyjeikcfOQQc1RQDXyGTgOI290jRxLhGQ==", "comment"=>{"title"=>"Monster?", "content"=>"WHERE?!"}, "commit"=>"Create Comment"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("title", "content", "user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Monster?"], ["content", "WHERE?!"], ["user_id", 1], ["post_id", 3], ["created_at", 2016-08-08 14:39:45 UTC], ["updated_at", 2016-08-08 14:39:45 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/3" for ::1 at 2016-08-08 15:39:45 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_show.html.erb (9.6ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_comment.html.erb (6.0ms)
+  Rendered posts/show.html.erb within layouts/application (18.6ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 68ms (Views: 64.3ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-08-08 15:39:49 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hda8XeoAQsGhfTkoh00iZAiTXVDs+1pwnnTMuvCtzDORR+8rKEzsJj358pTXD24d8upMkN4zfwD/lcl99bcxBg=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-08-08 15:39:49 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 52ms (Views: 50.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-08 15:39:51 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 54ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-08-08 15:39:56 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UCM7jz+nWmWskW3Aw94eKjmBGCJnzFDoNCUOXZo9AE0CJQF8/kb4jEjJxbDYegoRJPC2qyxXsoPgT/5UOJFaKw==", "user"=>{"username"=>"OmaoTzu", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "OmaoTzu"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["current_sign_in_at", 2016-08-08 14:39:56 UTC], ["last_sign_in_at", 2016-08-08 14:39:56 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["sign_in_count", 1], ["updated_at", 2016-08-08 14:39:56 UTC], ["id", 2]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 142ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/users/2" for ::1 at 2016-08-08 15:39:56 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 4]]
+  Rendered collection of posts/_post.html.erb [2 times] (11.6ms)
+  Rendered users/show.html.erb within layouts/application (15.3ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 67ms (Views: 63.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-08 15:40:00 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered collection of posts/_post.html.erb [4 times] (23.4ms)
+  Rendered posts/index.html.erb within layouts/application (26.0ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 73ms (Views: 66.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/posts/3" for ::1 at 2016-08-08 15:40:02 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered posts/_show.html.erb (7.7ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_comment.html.erb (5.0ms)
+  Rendered posts/show.html.erb within layouts/application (15.1ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 65ms (Views: 59.2ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/comments" for ::1 at 2016-08-08 15:40:51 +0100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cT9ASf57Lecyr+82RUJ4KNZ71jc50zZrI+FtvmhGF45uRF03EhZ1IYnnxHQFGdJ2SgWH1ANrcaB3dzZkMDUN0A==", "comment"=>{"title"=>"Idiots", "content"=>"You're all idiots"}, "commit"=>"Create Comment"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("title", "content", "user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Idiots"], ["content", "You're all idiots"], ["user_id", 2], ["post_id", 3], ["created_at", 2016-08-08 14:40:51 UTC], ["updated_at", 2016-08-08 14:40:51 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 9ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/3" for ::1 at 2016-08-08 15:40:51 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered posts/_show.html.erb (8.6ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered posts/_comment.html.erb (8.6ms)
+  Rendered posts/show.html.erb within layouts/application (20.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 71ms (Views: 64.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-08 15:40:56 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered collection of posts/_post.html.erb [4 times] (23.3ms)
+  Rendered posts/index.html.erb within layouts/application (26.1ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 85ms (Views: 78.7ms | ActiveRecord: 4.1ms)
+
+
+Started DELETE "/posts/2" for ::1 at 2016-08-08 15:43:39 +0100
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wZWg2W66L0041ZkzNuK3oPRz6cK0svXjgf1W7yLfDMp43clF+IGoCj8+fEjFKS3nQwmhdkGuCLKDElcyoXbhoQ==", "id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "platforms_posts" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "genres_posts" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 3.4ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  update or delete on table "posts" violates foreign key constraint "fk_rails_2fd19c0db7" on table "comments"
+DETAIL:  Key (id)=(2) is still referenced from table "comments".
+: DELETE FROM "posts" WHERE "posts"."id" = $1):
+  
+app/controllers/posts_controller.rb:59:in `destroy'
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.1ms)
+Started DELETE "/posts/4" for ::1 at 2016-08-08 15:44:13 +0100
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wZWg2W66L0041ZkzNuK3oPRz6cK0svXjgf1W7yLfDMp43clF+IGoCj8+fEjFKS3nQwmhdkGuCLKDElcyoXbhoQ==", "id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "platforms_posts" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "genres_posts" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 4]]
+  [1m[35mSQL (1.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 4]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 12ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-08 15:44:13 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mPlatform Load (0.2ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered collection of posts/_post.html.erb [3 times] (19.4ms)
+  Rendered posts/index.html.erb within layouts/application (21.8ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 72ms (Views: 67.2ms | ActiveRecord: 2.9ms)
+
+
+Started DELETE "/posts/2" for ::1 at 2016-08-08 15:44:19 +0100
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mXeTG22Fk+mmHQWHrDMSFckyObTTvhnA5OGbitO5XFkgP/qH+74UrqH24Pxf+IhSfkhxACai5JHmDppXUBCxMg==", "id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "platforms_posts" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "genres_posts" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 2.7ms)
+
+
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  update or delete on table "posts" violates foreign key constraint "fk_rails_2fd19c0db7" on table "comments"
+DETAIL:  Key (id)=(2) is still referenced from table "comments".
+: DELETE FROM "posts" WHERE "posts"."id" = $1):
+  
+app/controllers/posts_controller.rb:59:in `destroy'
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Jeremy/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.0ms)
+Started DELETE "/users/sign_out" for ::1 at 2016-08-08 15:45:08 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mXeTG22Fk+mmHQWHrDMSFckyObTTvhnA5OGbitO5XFkgP/qH+74UrqH24Pxf+IhSfkhxACai5JHmDppXUBCxMg=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-08-08 15:45:08 +0100
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+Completed 200 OK in 50ms (Views: 48.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-08 15:45:26 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticsController#index as HTML
+  Rendering statics/index.html.erb within layouts/application
+  Rendered statics/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (8.8ms)
+Completed 200 OK in 321ms (Views: 307.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-08-08 15:45:28 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.7ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 116ms (Views: 80.2ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-08-08 15:45:33 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JiL3Cbz13ES+plqR9tN6s0P5mWNc0m6i6gOUSiXdLi0tC1TfAXraziYfBPD75wbK+zb2ozjnwQXoDud8Bd0IMQ==", "user"=>{"username"=>"tanquo", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "tanquo"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", 2016-08-08 14:45:33 UTC], ["sign_in_count", 2], ["updated_at", 2016-08-08 14:45:33 UTC], ["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 155ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/users/1" for ::1 at 2016-08-08 15:45:33 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 3]]
+  Rendered collection of posts/_post.html.erb [2 times] (71.8ms)
+  Rendered users/show.html.erb within layouts/application (122.0ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 195ms (Views: 163.7ms | ActiveRecord: 20.6ms)
+
+
+Started GET "/posts/1" for ::1 at 2016-08-08 15:45:50 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/_show.html.erb (12.2ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  Rendered posts/_comment.html.erb (11.9ms)
+  Rendered posts/show.html.erb within layouts/application (28.2ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 88ms (Views: 67.7ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/users/1" for ::1 at 2016-08-08 15:45:56 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPlatform Load (1.0ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPlatform Load (0.3ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 3]]
+  Rendered collection of posts/_post.html.erb [2 times] (17.6ms)
+  Rendered users/show.html.erb within layouts/application (23.6ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 87ms (Views: 75.8ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/posts" for ::1 at 2016-08-08 15:45:58 +0100
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "genres_posts" ON "genres"."id" = "genres_posts"."genre_id" WHERE "genres_posts"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms" INNER JOIN "platforms_posts" ON "platforms"."id" = "platforms_posts"."platform_id" WHERE "platforms_posts"."post_id" = $1[0m  [["post_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered collection of posts/_post.html.erb [3 times] (20.3ms)
+  Rendered posts/index.html.erb within layouts/application (23.9ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 71ms (Views: 63.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2016-08-08 15:46:02 +0100
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[36mPlatform Load (0.4ms)[0m  [1m[34mSELECT "platforms".* FROM "platforms"[0m
+  Rendered posts/_form.html.erb (15.1ms)
+  Rendered posts/new.html.erb within layouts/application (16.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.7ms)
+Completed 200 OK in 69ms (Views: 64.4ms | ActiveRecord: 1.4ms)
+
+
