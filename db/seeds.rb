@@ -10,8 +10,8 @@ require_relative '../app/models/post.rb'
 require_relative '../app/models/platform.rb'
 require_relative '../app/models/user.rb'
 
-genre= Genre.destroy_all
-platform= Platform.destroy_all
+genre = Genre.destroy_all
+platform = Platform.destroy_all
 user = User.destroy_all
 post = Post.destroy_all
 
@@ -41,12 +41,35 @@ platform6 = Platform.create(name:"PS3")
 platform7 = Platform.create(name:"PS4")
 platform8 = Platform.create(name:"Mobile Games")
 
-user1 = User.Create(username:axel,
-email:"axel@axel.com",
+user1 = User.create(username:"tanquo",
+email:"t@t.com",
 password:"password", 
-password_confirmation:"password")
+password_confirmation:"password",
+profile_picture: File.open(File.join(Rails.root, '/public/uploads/user/profile_picture/1/akamegakill.png')))
+
+user2 = User.create(username:"OmaoTzu",
+  email:"o@o.com",
+  password:"password",
+  password_confirmation:"password",
+  profile_picture: File.open(File.join(Rails.root, '/public/uploads/user/profile_picture/2/Ang_s_moving_castle.jpg')))
 
 
+post1 = Post.create(game:"Super Mario",
+  description:"arty Mario",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/1/vzRN4in.jpg')))
 
+post2 = Post.create(game:"Bioshock",
+  description:"Big Daddy and Little Siter",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/2/bioshock.jpg')))
 
+post3 = Post.create(game:"Shadow of The Colossus",
+  description:"The bigger they are...",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/2/294578-fantasy_art-creature-horse-warrior-Shadow_of_the_Colossus-736x459.jpg')))
+
+post4 = Post.create(game:"Pokemon",
+  description:"Scary Pokemon",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/3/ghastly.jpg')))
+
+user1.posts= [post1, post3]
+user2.posts= [post2, post4]
 

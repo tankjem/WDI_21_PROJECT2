@@ -19,7 +19,7 @@
   <strong>User:</strong>
   <%= @post.user.username %>
 </p>
-<% if @post.user_id  == @current_user.id %>
+<% if @post.user == current_user %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 
 
