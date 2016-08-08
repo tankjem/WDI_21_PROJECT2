@@ -1,0 +1,17 @@
+<h1>Comments new</h1>
+<%= form_for(comment) do |f| %>
+  
+<fieldset class="form-group">
+  <%= f.label :title %><br />
+  <%= f.text_field :title, class:"form-control" %>
+</fieldset>
+
+<fieldset class="form-group">
+  <%= f.label :content %><br />
+  <%= f.text_area :content, class:"form-control" %>
+</fieldset>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

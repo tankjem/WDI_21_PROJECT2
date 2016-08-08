@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   
 
-  resources :posts
+  # get 'comments/new'
+
+  # get 'comments/create'
+
+  # get 'comments/destroy'
+
+  resources :posts, :comments
   devise_for :users
   root "statics#index"
   get 'about', to: 'statics#about'
