@@ -73,6 +73,15 @@ post4 = Post.create(game:"Pokemon",
   description:"Scary Pokemon",
   image:File.open(File.join(Rails.root,'/public/uploads/post/image/3/ghastly.jpg')))
 
+post1.genres = [genre17]
+post1.platforms = [platform3]
+post2.genres = [genre1, genre2, genre4, genre5, genre7]
+post2.platforms =[platform1, platform2, platform4, platform5, platform6, platform7]
+post3.genres = [genre1, genre2, genre3]
+post3.platforms = [platform6, platform7]
+post4.genres = [genre2]
+post4.platforms =[platform3, platform8, platform9]
+
 user1.posts= [post1, post3]
 user2.posts= [post2, post4]
 
