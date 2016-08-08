@@ -33,7 +33,7 @@ class ArtUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fit => [400, 400]
+    process :resize_to_fit => [600, 600]
   end
   version :detail do
     process :resize_to_fit => [1000, 1000]
