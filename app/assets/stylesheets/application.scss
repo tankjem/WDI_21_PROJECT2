@@ -89,10 +89,7 @@ button {
 }
 
 .card {
-width: 100%;
-height: auto;
 text-align: center;
-border-radius: 5px;
 }
 .card-columns {
   @include media-breakpoint-only(lg) {
