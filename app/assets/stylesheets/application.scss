@@ -101,6 +101,10 @@ text-align: center;
 // }
 #user-card{
   display: inline-block;
+  margin-left: 50%;
+  transform: translate(-50%);
+  border-radius: 15%;
+
 }
 .comment {
   width: 100%;
@@ -111,5 +115,14 @@ text-align: center;
   height:auto;
   display: inline-block;
   border: transparent;
+  background-color: transparent;
 
+}
+
+.search-box {
+  display: inline-block;
+
+}
+img {
+  border-radius: 2%;
 }
