@@ -1,10 +1,17 @@
 
 <div class="container">
 <h1>Posts</h1>
-        <%= render @posts %>
-</div>
-
-<br>
 <% if current_user %>
 <%= link_to 'New Post', new_post_path %>
 <% end %>
+<br>
+<div class="container">
+<div class= "row">
+<div class="card-deck-wrapper">
+<div class="card-deck">
+        <%= render @posts %>
+</div>
+</div>        
+</div>        
+</div>
+</div>

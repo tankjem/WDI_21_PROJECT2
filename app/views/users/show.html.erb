@@ -1,17 +1,23 @@
 <br>
 <div class="container">
-  <div class="card-columns">
+  <!-- <div class="card-columns"> -->
     <div id="user-card" class="card card-block">
       <%= image_tag (@user.profile_picture.thumb.url) %>
   <br>
     <h1 class="card-title"><%= @user.username %></h1>
     <h5 class="card-text"><%= @user.email %></h5>
     </div>
-  </div>
+  
 </div>
 <br>
 <div class="container">
+<div class= "row">
+<div class="card-deck-wrapper">
+<div class="card-deck">
       
      <%= render @user.posts %>
             
+</div>
+</div>
+</div>
 </div>
