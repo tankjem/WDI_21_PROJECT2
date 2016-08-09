@@ -81,28 +81,53 @@ post6 = Post.create(game:"Various",
   description:"A collection of heroes",
   image:File.open(File.join(Rails.root,'/public/uploads/post/image/6/339908.jpg')))
 
-post 7 = Post.create(game:"Mass Effect 3",
+post7 = Post.create(game:"Mass Effect 3",
   description:"Mass Effect wallpaper",
   image:File.open(File.join(Rails.root,'/public/uploads/post/image/7/144374.jpg')))
 
-post 8 = Post.create(game:"Super Mario",
+post8 = Post.create(game:"Super Mario",
   description:"Apocalypse Mario",
   image:File.open(File.join(Rails.root,'/public/uploads/post/image/8/mario.jpg')))
 
-post 9 = Post.create(game:"Valkyria Chronicles",
+post9 = Post.create(game:"Valkyria Chronicles",
   description:"Squad 7",
   image:File.open(File.join(Rails.root,'/public/uploads/post/image/9/valkyriasquad7.jpg')))
 
+post10 = Post.create(game:"Shadow of the Colossus",
+  description:"More Giants",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/10/393129.jpg')))
 
+post11 = Post.create(game:"Gravity Rush",
+  description:"Kat Just chilling",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/11/gravityrush.jpg')))
 
+post12 = Post.create(game:"Bioshock",
+  description: "Welcome to Rapture",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/12/biocity.jpg')))
 
+post13 = Post.create(game:"Pokemon",
+  description:"PokePoker",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/13/pokepoker.jpg')))
 
+post14 = Post.create(game:"No Mans Sky",
+  description:"No Mans Sky Concept Art",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/14/No-Man-s-Sky-Wallpaper-1920x1080-09.jpg')))
 
+post15 = Post.create(game:"Persona 4 Golden",
+  description:"The persona 4 team",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/15/persona4.jpg')))
 
+post16 = Post.create(game:"Uncharted 2 Drake's Deception",
+  description:"Uncharted 2 concept Art",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/16/uncharted-2-concept-art-wallpaper-mountain-railroad.jpg')))
 
+post17 = Post.create(game:"Pokemon",
+  description:"Bulby",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/17/bulbasaur.jpg')))
 
-
-
+post18 = Post.create(game:"Jet Set Radio Future",
+  description:"JSRF Grafitti Art",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/18/XM8UE4o.jpg')))
 
 post1.genres = [genre17]
 post1.platforms = [platform3]
@@ -122,7 +147,29 @@ post8.genres = [genre2, genre17]
 post8.platforms = [platform3, platform8, platform9]
 post9.genres = [genre1, genre2, genre12, genre14]
 post9.platforms = [platform6, platform7]
+post10.genres = [genre1, genre2, genre3]
+post10.platforms = [platform6, platform7]
+post11.genres = [genre2, genre3, genre12]
+post11.platforms = [platform6, platform7]
+post12.genres = [genre4, genre5, genre7]
+post12.platforms = [platform1, platform4, platform5, platform6, platform7]
+post13.genres = [genre2, genre12]
+post13.platforms = [platform3, platform8, platform9]
+post14.genres = [genre1, genre2, genre5, genre6]
+post14.platforms = [platform1, platform7]
+post15.genres = [genre12]
+post15.platforms = [platform6, platform9]
+post16.genres = [genre1, genre2, genre17]
+post16.platforms = [platform6, platform7]
+post17.genres = [genre2, genre12]
+post17.platforms = [platform3, platform8, platform9]
+post18.genres = [genre2, genre5, genre8, genre9]
+post18.platforms = [platform1, platform2, platform4, platform5, platform6, platform7]
 
-user1.posts= [post1, post3, post5, post7, post9]
-user2.posts= [post2, post4, post6, post8]
+
+
+
+
+user1.posts= [post1, post3, post5, post7, post9, post11, post12, post13, post17]
+user2.posts= [post2, post4, post6, post8, post10, post14, post15, post16, post18]
 
