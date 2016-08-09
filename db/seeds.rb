@@ -73,6 +73,37 @@ post4 = Post.create(game:"Pokemon",
   description:"Scary Pokemon",
   image:File.open(File.join(Rails.root,'/public/uploads/post/image/3/ghastly.jpg')))
 
+post5 = Post.create(game:"No Mans Sky",
+  description:"Space",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/5/90503.jpg')))
+
+post6 = Post.create(game:"Various",
+  description:"A collection of heroes",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/6/339908.jpg')))
+
+post 7 = Post.create(game:"Mass Effect 3",
+  description:"Mass Effect wallpaper",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/7/144374.jpg')))
+
+post 8 = Post.create(game:"Super Mario",
+  description:"Apocalypse Mario",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/8/mario.jpg')))
+
+post 9 = Post.create(game:"Valkyria Chronicles",
+  description:"Squad 7",
+  image:File.open(File.join(Rails.root,'/public/uploads/post/image/9/valkyriasquad7.jpg')))
+
+
+
+
+
+
+
+
+
+
+
+
 post1.genres = [genre17]
 post1.platforms = [platform3]
 post2.genres = [genre1, genre2, genre4, genre5, genre7]
@@ -81,7 +112,17 @@ post3.genres = [genre1, genre2, genre3]
 post3.platforms = [platform6, platform7]
 post4.genres = [genre2]
 post4.platforms =[platform3, platform8, platform9]
+post5.genres = [genre5, genre6, genre7]
+post5.platforms = [platform1, platform7]
+post6.genres = [genre18]
+post6.platforms = [platform9]
+post7.genres = [genre1, genre2, genre4, genre5]
+post7.platforms = [platform1, platform2, platform4, platform5, platform6, platform7]
+post8.genres = [genre2, genre17]
+post8.platforms = [platform3, platform8, platform9]
+post9.genres = [genre1, genre2, genre12, genre14]
+post9.platforms = [platform6, platform7]
 
-user1.posts= [post1, post3]
-user2.posts= [post2, post4]
+user1.posts= [post1, post3, post5, post7, post9]
+user2.posts= [post2, post4, post6, post8]
 

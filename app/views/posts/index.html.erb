@@ -1,27 +1,31 @@
 
 <div class="container">
-<h1>Posts</h1>
-<% if current_user %>
-<%= link_to 'New Post', new_post_path %>
-<% end %>
 <br>
-<form action="/posts" method="GET">
+  <h1>Posts</h1>
+  <% if current_user %>
+  <h2><%= link_to 'New Post', new_post_path %></h2>
+  <% end %>
+<br>
+  <h3>Genres</h3>
+  <form action="/posts" method="GET">
   <select name="genre_id">
   <% @genres.each do |genre| %>
     <option value="<%= genre.id %>"<% if params[:genre_id].to_i == genre.id %>  selected<% end %>><%= genre.name %></option>
   <% end %>
   </select>
   <button>Search</button>
-</form>
-<form action="/posts" method="GET">
+  </form>
+<br>
+  <h3>Platforms</h3>
+  <form action="/posts" method="GET">
   <select name="platform_id">
   <% @platforms.each do |platform| %>
     <option value="<%= platform.id %>"<% if params[:platform_id].to_i == platform.id %>  selected<% end %>><%= platform.name %></option>
   <% end %>
   </select>
   <button>Search</button>
-</form>
-
+  </form>
+<br>
   <div class= "row">
     <div class="card-deck-wrapper">
       <div class="card-deck">
