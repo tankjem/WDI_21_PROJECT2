@@ -5,6 +5,22 @@
 <%= link_to 'New Post', new_post_path %>
 <% end %>
 <br>
+<form action="/posts" method="GET">
+  <select name="genre_id">
+  <% @genres.each do |genre| %>
+    <option value="<%= genre.id %>"<% if params[:genre_id].to_i == genre.id %>  selected<% end %>><%= genre.name %></option>
+  <% end %>
+  </select>
+  <button>Search</button>
+</form>
+<form action="/posts" method="GET">
+  <select name="platform_id">
+  <% @platforms.each do |platform| %>
+    <option value="<%= platform.id %>"<% if params[:platform_id].to_i == platform.id %>  selected<% end %>><%= platform.name %></option>
+  <% end %>
+  </select>
+  <button>Search</button>
+</form>
 
   <div class= "row">
     <div class="card-deck-wrapper">

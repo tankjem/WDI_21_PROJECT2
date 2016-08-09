@@ -4,13 +4,20 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    if params[:genre_id]
+      @posts = Post.includes(:genres).where(genres: { id: params[:genre_id] })
+    elsif params[:platform_id]
+      @posts = Post.includes(:platforms).where(platforms: { id: params[:platform_id] })
+    else
+      @posts = Post.all
+    end
+    @genres = Genre.all
+    @platforms = Platform.all
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-    
     @comment = Comment.new
   end
 
