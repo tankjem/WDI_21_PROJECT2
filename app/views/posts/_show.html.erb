@@ -1,27 +1,18 @@
 <br>
-<div class="card-deck">
-<div class ="card card-block">
-  <h1 class="card-title"><%= @post.game %></h1>
+<div class ="card card-outline-none">  
   <%= image_tag (@post.image.detail.url) %>
-<br>
+    <div class="card-block">
+      <h1 class="card-title"><%= @post.game %></h1>
+      <h3 class="card-text"><%= @post.description %></h3>
 
-  <h3 class="card-text"><%= @post.description %></h3>
-  
-  <h4 class="card-text">Genres:<%= @post.genres.map{ |x| x.name }.join(", ") %></h4>
-  <h4 class="card-text">Platforms:<%= @post.platforms.map{ |x| x.name }.join(", ") %></h4>  
-
-
-
-  <h6 class="card-text"><%= @post.user.username %></h6>
-  
-
-
-
+      <h4 class="card-text">Genres: <%= @post.genres.map{ |x| x.name }.join(", ") %></h4>
+      <h4 class="card-text">Platforms: <%= @post.platforms.map{ |x| x.name }.join(", ") %></h4>  
+      <h6 class="card-text"><%= @post.user.username %></h6>
 <% if @post.user == current_user %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
-
-
+<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
+<br>
 <%= link_to 'Back', posts_path %>
-</div>
+    </div>
 </div>
