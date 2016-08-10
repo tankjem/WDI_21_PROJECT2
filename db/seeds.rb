@@ -5,17 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require_relative '../app/models/genre.rb'
-require_relative '../app/models/post.rb'
-require_relative '../app/models/platform.rb'
-require_relative '../app/models/user.rb'
-require_relative '../app/models/comment.rb'
 
-genre = Genre.destroy_all
-platform = Platform.destroy_all
-user = User.destroy_all
-post = Post.destroy_all
-comment = Comment.destroy_all
+["genres", "platforms", "users", "posts", "comments"].each do |table_name|
+  ActiveRecord::Base.connection.execute("TRUNCATE #{table_name} RESTART IDENTITY CASCADE")
+end
 
 genre1 = Genre.create(name:"Action")
 genre2 = Genre.create(name:"Adventure")
