@@ -50,6 +50,7 @@ body {
 }
 .form-control{
   font-family: 'Cairo', sans-serif;
+
 }
 .static-font{
 font-family: 'Bungee Inline', cursive;
@@ -162,11 +163,28 @@ button {
   border-radius: 5px;
   padding: 10px 20px;
 }
+.navbar-brand{
+  font-family: 'Bungee Inline', cursive;
+  color: #228DFF;
+   -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+   -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+   animation: neon2 1.5s ease-in-out infinite alternate;
+}
 
+.nav-item-dropdown {
 
-.nav-item {
- margin-top: 7px;
  font-family: 'Cairo', sans-serif;
+ font-weight:900;
+ display:inline-block;
+ color: black;
+ 
+ margin-left:1%;
+}
+.dropdown-menu{
+  margin-left: 10%;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 600;
+
 }
 
 .card {
