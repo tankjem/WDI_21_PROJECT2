@@ -129,10 +129,12 @@ color: #228DFF;
    max-width: 100%;
 }
 .facebook { 
-  background: #435f9c; 
+  background: #435f9c;
+  color: #fff; 
 }
 .twitter  { 
   background: #00aced; 
+  color: #fff; 
 }
 .card-title{
   color: black;
@@ -232,7 +234,9 @@ font-family: 'Cairo', sans-serif;
 .search-box {
   font-family: 'Cairo', sans-serif;
   display: inline-block;
-
+margin-left:20%;
+  // margin-left: 40%;
+  // transform: translate(-40%);
 }
 img {
   border-radius: 1%;
