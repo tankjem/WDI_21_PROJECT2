@@ -42,7 +42,15 @@ body {
   width:50%;
   height:auto;
 }
-
+.forgot-password{
+  width:50%;
+  height:auto;
+  padding:10px auto;
+  text-align: center;
+}
+.form-control{
+  font-family: 'Cairo', sans-serif;
+}
 .static-font{
 font-family: 'Bungee Inline', cursive;
 font-size: 80px;
@@ -85,7 +93,7 @@ color: #228DFF;
   font-family: 'Bungee Inline', cursive;
   color: #BA01FF;
   font-size: 15px;
-  
+
    -webkit-animation: neon6 1.5s ease-in-out infinite alternate;
     -moz-animation: neon6 1.5s ease-in-out infinite alternate;
     animation: neon6 1.5s ease-in-out infinite alternate;
