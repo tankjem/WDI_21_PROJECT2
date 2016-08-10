@@ -50,86 +50,86 @@ user1 = User.create(username:"tanquo",
 email:"t@t.com",
 password:"password", 
 password_confirmation:"password",
-profile_picture: File.open(File.join(Rails.root, '/public/uploads/user/profile_picture/1/akamegakill.png')))
+profile_picture: File.open(File.join(Rails.root, '/db/images/user/profile_picture/1/akamegakill.png')))
 
 user2 = User.create(username:"OmaoTzu",
   email:"o@o.com",
   password:"password",
   password_confirmation:"password",
-  profile_picture: File.open(File.join(Rails.root, '/public/uploads/user/profile_picture/2/Ang_s_moving_castle.jpg')))
+  profile_picture: File.open(File.join(Rails.root, '/db/images/user/profile_picture/2/Ang_s_moving_castle.jpg')))
 
 
 post1 = Post.create(game:"Super Mario",
   description:"arty Mario",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/1/vzRN4in.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/1/vzRN4in.jpg')))
 
 post2 = Post.create(game:"Bioshock",
   description:"Big Daddy and Little Siter",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/2/bioshock.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/2/bioshock.jpg')))
 
 post3 = Post.create(game:"Shadow of The Colossus",
   description:"The bigger they are...",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/2/294578-fantasy_art-creature-horse-warrior-Shadow_of_the_Colossus-736x459.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/2/294578-fantasy_art-creature-horse-warrior-Shadow_of_the_Colossus-736x459.jpg')))
 
 post4 = Post.create(game:"Pokemon",
   description:"Scary Pokemon",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/3/ghastly.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/3/ghastly.jpg')))
 
 post5 = Post.create(game:"No Mans Sky",
   description:"Space",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/5/90503.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/5/90503.jpg')))
 
 post6 = Post.create(game:"Various",
   description:"A collection of heroes",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/6/339908.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/6/339908.jpg')))
 
 post7 = Post.create(game:"Mass Effect 3",
   description:"Mass Effect wallpaper",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/7/144374.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/7/144374.jpg')))
 
 post8 = Post.create(game:"Super Mario",
   description:"Apocalypse Mario",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/8/mario.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/8/mario.jpg')))
 
 post9 = Post.create(game:"Valkyria Chronicles",
   description:"Squad 7",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/9/valkyriasquad7.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/9/valkyriasquad7.jpg')))
 
 post10 = Post.create(game:"Shadow of the Colossus",
   description:"More Giants",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/10/393129.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/10/393129.jpg')))
 
 post11 = Post.create(game:"Gravity Rush",
   description:"Kat Just chilling",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/11/gravityrush.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/11/gravityrush.jpg')))
 
 post12 = Post.create(game:"Bioshock",
   description: "Welcome to Rapture",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/12/biocity.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/12/biocity.jpg')))
 
 post13 = Post.create(game:"Pokemon",
   description:"PokePoker",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/13/pokepoker.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/13/pokepoker.jpg')))
 
 post14 = Post.create(game:"No Mans Sky",
   description:"No Mans Sky Concept Art",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/14/No-Man-s-Sky-Wallpaper-1920x1080-09.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/14/No-Man-s-Sky-Wallpaper-1920x1080-09.jpg')))
 
 post15 = Post.create(game:"Persona 4 Golden",
   description:"The persona 4 team",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/15/persona4.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/15/persona4.jpg')))
 
 post16 = Post.create(game:"Uncharted 2 Drake's Deception",
   description:"Uncharted 2 concept Art",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/16/uncharted-2-concept-art-wallpaper-mountain-railroad.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/16/uncharted-2-concept-art-wallpaper-mountain-railroad.jpg')))
 
 post17 = Post.create(game:"Pokemon",
   description:"Bulby",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/17/bulbasaur.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/17/bulbasaur.jpg')))
 
 post18 = Post.create(game:"Jet Set Radio Future",
   description:"JSRF Grafitti Art",
-  image:File.open(File.join(Rails.root,'/public/uploads/post/image/18/XM8UE4o.jpg')))
+  image:File.open(File.join(Rails.root,'/db/images/post/image/18/XM8UE4o.jpg')))
 
 comment1 = Comment.create(title:"Testing Testing", content:" Your simply the best!")
 comment2 = Comment.create(title:"Testing Testing", content:" Your simply the best!")

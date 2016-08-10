@@ -107,7 +107,21 @@ text-align: center;
 
 }
 .comment {
-  width: 50%;
+  width: 40%;
+  display: inline-block;
+ 
+  text-align: center;
+}
+.new-comment{
+ 
+  width:40%;
+  
+  float: right;
+}
+.comment-container{
+  width:100%;
+  height: auto;
+  background-color: blue;
   display: inline-block;
 }
 #image-card{
