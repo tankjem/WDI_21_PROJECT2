@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'carrierwave', '0.10.0'
+gem 'fog', require: 'fog/aws'
 gem 'rmagick'
 gem 'bootstrap', '~> 4.0.0.alpha3.1'
 
