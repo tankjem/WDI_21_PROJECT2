@@ -107,8 +107,8 @@ text-align: center;
 
 }
 .comment {
-  width: 100%;
-  height: auto;
+  width: 50%;
+  display: inline-block;
 }
 #image-card{
   max-width: 100%;
@@ -124,5 +124,5 @@ text-align: center;
 
 }
 img {
-  border-radius: 2%;
+  border-radius: 1%;
 }
