@@ -103,77 +103,77 @@ post7 = Post.create!(game:"Mass Effect 3",
 
 post8 = Post.create!(game:"Super Mario",
   description:"Apocalypse Mario",
-  user_id: user1.id,
+  user_id: user2.id,
   image:File.open(File.join(Rails.root,'/db/images/post/image/8/mario.jpg')),
   genre_ids:[genre2.id, genre17.id],
   platform_ids:[platform3.id, platform8.id, platform9.id])
 
 post9 = Post.create!(game:"Valkyria Chronicles",
   description:"Squad 7",
-  user_id: user2.id,
+  user_id: user1.id,
   image:File.open(File.join(Rails.root,'/db/images/post/image/9/valkyriasquad7.jpg')),
   genre_ids:[genre1.id, genre2.id, genre12.id, genre14.id],
   platform_ids:[platform6.id, platform7.id])
 
 post10 = Post.create!(game:"Shadow of the Colossus",
   description:"More Giants",
-  user_id: user1.id,
+  user_id: user2.id,
   image:File.open(File.join(Rails.root,'/db/images/post/image/10/393129.jpg')),
   genre_ids:[genre1.id, genre2.id, genre3.id],
   platform_ids:[platform6.id, platform7.id])
 
 post11 = Post.create!(game:"Gravity Rush",
   description:"Kat Just chilling",
-  user_id: user2.id,
+  user_id: user1.id,
   image:File.open(File.join(Rails.root,'/db/images/post/image/11/gravityrush.jpg')),
   genre_ids:[genre2.id, genre3.id, genre12.id],
   platform_ids:[platform6.id, platform7.id])
 
 post12 = Post.create!(game:"Bioshock",
   description: "Welcome to Rapture",
-  user_id: user1.id,
+  user_id: user2.id,
   image:File.open(File.join(Rails.root,'/db/images/post/image/12/biocity.jpg')),
   genre_ids:[genre4.id, genre5.id, genre7.id],
   platform_ids:[platform1.id, platform4.id, platform5.id, platform6.id, platform7.id])
 
 post13 = Post.create!(game:"Pokemon",
   description:"PokePoker",
-  user_id: user2.id,
+  user_id: user1.id,
   image:File.open(File.join(Rails.root,'/db/images/post/image/13/pokepoker.jpg')),
   genre_ids:[genre2.id, genre12.id],
   platform_ids:[platform3.id, platform8.id, platform9.id])
 
 post14 = Post.create!(game:"No Mans Sky",
   description:"No Mans Sky Concept Art",
-  user_id: user1.id,
+  user_id: user2.id,
   image:File.open(File.join(Rails.root,'/db/images/post/image/14/No-Man-s-Sky-Wallpaper-1920x1080-09.jpg')),
   genre_ids:[genre1.id, genre2.id, genre5.id, genre6.id],
   platform_ids:[platform1.id, platform7.id])
 
 post15 = Post.create!(game:"Persona 4 Golden",
   description:"The persona 4 team",
-  user_id: user2.id,
+  user_id: user1.id,
   image:File.open(File.join(Rails.root,'/db/images/post/image/15/persona4.jpg')),
   genre_ids:[genre12.id],
   platform_ids:[platform6.id, platform9.id])
 
 post16 = Post.create!(game:"Uncharted 2 Drake's Deception",
   description:"Uncharted 2 concept Art",
-  user_id: user1.id,
+  user_id: user2.id,
   image:File.open(File.join(Rails.root,'/db/images/post/image/16/uncharted-2-concept-art-wallpaper-mountain-railroad.jpg')),
   genre_ids:[genre1.id, genre2.id, genre17.id],
   platform_ids:[platform6.id, platform7.id])
 
 post17 = Post.create!(game:"Pokemon",
   description:"Bulby",
-  user_id: user2.id,
+  user_id: user1.id,
   image:File.open(File.join(Rails.root,'/db/images/post/image/17/bulbasaur.jpg')),
   genre_ids:[genre2.id, genre12.id],
   platform_ids:[platform3.id, platform8.id, platform9.id])
 
 post18 = Post.create!(game:"Jet Set Radio Future",
   description:"JSRF Grafitti Art",
-  user_id: user1.id,
+  user_id: user2.id,
   image:File.open(File.join(Rails.root,'/db/images/post/image/18/XM8UE4o.jpg')),
   genre_ids:[genre2.id, genre5.id, genre8.id, genre9.id],
   platform_ids:[platform1.id, platform2.id, platform4.id, platform5.id, platform6.id, platform7.id])
