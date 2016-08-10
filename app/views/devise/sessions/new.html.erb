@@ -1,20 +1,21 @@
 <div class="container-fluid">
-<div class="container">
-<h2>Log in</h2>
+<div class="container login-box">
+<br>
+<h2 class="static-font">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <fieldset class="form-group">
+  <fieldset class="form-group static-sub-font">
     <%= f.label :username %><br />
     <%= f.text_field :username, autofocus: true, class:"form-control" %>
   </fieldset>
 
-  <fieldset class="form-group">
+  <fieldset class="form-group static-sub-font">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
   </fieldset>
 
   <% if devise_mapping.rememberable? -%>
-    <fieldset class="form-group">
+    <fieldset class="form-group static-sub-font">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
       <br>
@@ -22,7 +23,7 @@
 
     </fieldset>
   <% end -%>
-  <div class="actions">
+  <div class="actions static-register-font">
     <%= f.submit "Log in" %>
   </div>
 <% end %>
