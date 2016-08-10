@@ -142,15 +142,17 @@ color: #228DFF;
 }
 h1 {
   color: white;
+  font-family: 'Cairo', sans-serif;
 }
 h5 {
   color:white;
+  font-family: 'Cairo', sans-serif;
 }
 button {
   cursor: pointer;
   background: none;
   border: none;
-  color: #fff;
+  color: black;
   font-size: 18px;
   font-weight: 600;
 
@@ -162,10 +164,12 @@ button {
 
 .nav-item {
  margin-top: 7px;
+ font-family: 'Cairo', sans-serif;
 }
 
 .card {
 text-align: center;
+font-family: 'Cairo', sans-serif;
 }
 // .card-columns {
 //   @include media-breakpoint-only(lg) {
@@ -180,6 +184,7 @@ text-align: center;
   margin-left: 50%;
   transform: translate(-50%);
   border-radius: 15%;
+  font-family: 'Cairo', sans-serif;
 
 }
 .comment {
@@ -187,12 +192,14 @@ text-align: center;
   display: inline-block;
   margin: 5px auto;
   text-align: center;
+  font-family: 'Cairo', sans-serif;
 }
 .new-comment{
  
   width:40%;
   margin: 5px 5px;
   float: right;
+  font-family: 'Cairo', sans-serif;
 }
 .comment-container{
   width:100%;
@@ -209,7 +216,11 @@ text-align: center;
   display: inline-block;
   border: transparent;
   background-color: transparent;
+  font-family: 'Cairo', sans-serif;
 
+}
+#image-show-card{
+  font-family: 'Cairo', sans-serif;
 }
 #image-show-card img{
   max-width: 100%;
@@ -219,6 +230,7 @@ text-align: center;
 
 
 .search-box {
+  font-family: 'Cairo', sans-serif;
   display: inline-block;
 
 }
