@@ -1,36 +1,36 @@
+<div class="user-show">
+  <div class="container">
+  <br>
 
-<div class="container">
-<br>
-
-<div class="search-box">
-  <h3>Genres</h3>
-  <form class="search" action="/posts" method="GET">
-  <select name="genre_id">
-  <% @genres.each do |genre| %>
-    <option value="<%= genre.id %>"<% if params[:genre_id].to_i == genre.id %>  selected<% end %>><%= genre.name %></option>
-  <% end %>
-  </select>
-  <button>Search</button>
-  </form>
-</div>
-<div class="search-box">
-  <h3>Platforms</h3>
-  <form class="search" action="/posts" method="GET">
-  <select name="platform_id">
-  <% @platforms.each do |platform| %>
-    <option value="<%= platform.id %>"<% if params[:platform_id].to_i == platform.id %>  selected<% end %>><%= platform.name %></option>
-  <% end %>
-  </select>
-  <button>Search</button>
-  </form>
+  <div class="search-box">
+    <h3>Genres</h3>
+    <form class="search" action="/posts" method="GET">
+    <select name="genre_id">
+    <% @genres.each do |genre| %>
+      <option value="<%= genre.id %>"<% if params[:genre_id].to_i == genre.id %>  selected<% end %>><%= genre.name %></option>
+    <% end %>
+    </select>
+    <button>Search</button>
+    </form>
+  </div>
+  <div class="search-box">
+    <h3>Platforms</h3>
+    <form class="search" action="/posts" method="GET">
+    <select name="platform_id">
+    <% @platforms.each do |platform| %>
+      <option value="<%= platform.id %>"<% if params[:platform_id].to_i == platform.id %>  selected<% end %>><%= platform.name %></option>
+    <% end %>
+    </select>
+    <button>Search</button>
+    </form>
 </div>
 <br>
-  <div class= "row">
-    <div class="card-deck-wrapper">
-      <div class="card-deck">
-        <%= render @posts %>
-      </div>
+    <div class= "row">
+      <div class="card-deck-wrapper">
+        <div class="card-deck">
+          <%= render @posts %>
+        </div>
+      </div>        
     </div>        
-  </div>        
+  </div>
 </div>
-

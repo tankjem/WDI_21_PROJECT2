@@ -1,27 +1,28 @@
+<div class="edit-user">
 <div class="container">
 <br>
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2 class="static-sub-font">Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <fieldset class="form-group">
-    <%= f.label :username %><br />
+    <%= f.label :username, class:"new-label" %><br />
     <%= f.text_field :username, autofocus: true, class:"form-control" %>
   </fieldset>
 
   <fieldset class="form-group">
-    <%= f.label :profile_picture %><br />
+    <%= f.label :profile_picture, class:"new-label" %><br />
     <%= f.file_field :profile_picture %>
   </fieldset>
 
   <fieldset class="form-group">
-     <%= f.label :remote_profile_picture_url %><br />
+     <%= f.label :remote_profile_picture_url, class:"new-label" %><br />
     <%= f.text_field :remote_profile_picture_url, class:"form-control" %>
    </fieldset>
 
   <fieldset class="form-group">
-    <%= f.label :email %><br />
+    <%= f.label :email, class:"new-label" %><br />
     <%= f.email_field :email, class:"form-control" %>
   </fieldset>
 
@@ -39,12 +40,12 @@
   </fieldset>
 
   <fieldset class="form-group">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, class:"new-label" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
   </fieldset>
 
   <fieldset class="form-group">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password, class:"new-label" %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off", class:"form-control" %>
   </fieldset>
 
@@ -52,12 +53,11 @@
     <%= f.submit "Update" %>
   </div>
 <% end %>
+<br>
 
+<h3 class="static-sub-font">Cancel my account</h3>
+<p class="static-register-font">Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<h6 class="static-sub-font"><%= link_to "Back", :back %></h6>
 </div>
-
+</div>

@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_for(post) do |f| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -12,30 +13,38 @@
   <% end %>
 
   <fieldset class="form-group">
-    <%= f.label :game %>
+    <%= f.label :game, class:"new-label" %>
     <%= f.text_field :game, class:"form-control" %>
   </fieldset>
 
   <fieldset class="form-group">
-    <%= f.label :image %>
+    <%= f.label :image, class:"new-label" %>
     <%= f.file_field :image, class:"form-control" %>
   </fieldset>
 
   <fieldset class="form-group">
-    <%= f.label :description %>
+    <%= f.label :description, class:"new-label" %>
     <%= f.text_area :description,class:"form-control" %>
   </fieldset>
-
-  <fieldset class="form-group">
-      <%= collection_check_boxes(:post, :genre_ids, Genre.all, :id, :name) %>
-  </fieldset>
-
-  <fieldset class="form-group">
-      <%= collection_check_boxes(:post, :platform_ids, Platform.all, :id, :name) %>
+  <fieldset class="col-md-4 checkbox-list">
+      <%= f.label :Genres, class:"label-checkbox" %>
+      <br>
+      <%= collection_check_boxes(:post, :genre_ids, Genre.all, :id , :name) %>
   </fieldset>
 
 
-  <div class="actions">
+  <fieldset class="col-md-4 checkbox-list">
+    <%= f.label :Platforms, class:"label-checkbox" %>
+    <br>
+    <%= collection_check_boxes(:post, :platform_ids, Platform.all, :id, :name) %>
+
+  </fieldset>
+
+  <div class="actions static-sub-font">
     <%= f.submit %>
   </div>
 <% end %>
+<br>
+<h6 class="static-sub-font"><%= link_to 'Back', posts_path %></h6>
+
+</div>

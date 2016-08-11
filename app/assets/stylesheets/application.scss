@@ -19,10 +19,12 @@
 body {
  margin: 0 auto;
  color: white;
- background-color: grey;
+
+ 
  -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;
 }
+
 
 .container-fluid {
  width: 100%;
@@ -52,6 +54,39 @@ body {
   font-family: 'Cairo', sans-serif;
 
 }
+.form-group{
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+}
+.label-checkbox{
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+
+}
+.new-label{
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.checkbox-list input[type="checkbox"] {
+ 
+  display: inline-block;
+  width: 10%;
+}
+
+.checkbox-list input[type="checkbox"] + label {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  display: inline-block;
+  margin-left: 10%;
+  width: 80%;
+}
+
+
+
+
 .static-font{
 font-family: 'Bungee Inline', cursive;
 font-size: 80px;
@@ -138,10 +173,16 @@ color: #228DFF;
   color: #fff; 
 }
 .card-title{
-  color: black;
+  color: white;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+
 }
 .card-text{
-  color: black;
+  color: white;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 600;
 }
 h1 {
   color: white;
@@ -204,15 +245,18 @@ font-family: 'Cairo', sans-serif;
   margin-left: 50%;
   transform: translate(-50%);
   border-radius: 15%;
+  border-style: none;
   font-family: 'Cairo', sans-serif;
 
 }
 .comment {
-  width: 30%;
+  font-size: 20px;
+  width: 20%;
   display: inline-block;
   margin: 5px auto;
   text-align: center;
   font-family: 'Cairo', sans-serif;
+  font-weight: 700;
 }
 .new-comment{
  
@@ -224,7 +268,7 @@ font-family: 'Cairo', sans-serif;
 .comment-container{
   width:100%;
   height: auto;
-  background-color: blue;
+  background-color: black;
   display: inline-block;
   border: 1px solid black;
   border-radius: 1%;
@@ -240,12 +284,17 @@ font-family: 'Cairo', sans-serif;
 
 }
 #image-show-card{
+  width:100%;
+  height: auto;
   font-family: 'Cairo', sans-serif;
+  border-style: none;
+  background-color: transparent;
+  color: white;
 }
 #image-show-card img{
   max-width: 100%;
   height: auto;
-  border:transparent;
+
 }
 
 
@@ -253,9 +302,38 @@ font-family: 'Cairo', sans-serif;
   font-family: 'Cairo', sans-serif;
   display: inline-block;
 margin-left:20%;
-  // margin-left: 40%;
-  // transform: translate(-40%);
+
 }
 img {
   border-radius: 1%;
+}
+.new-post{
+  width: 100%;
+  height: auto;
+  background: url(bleurgh.jpg) center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+.edit-user{
+  width: 100%;
+  height: auto;
+
+  background: url(booty3.png) center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.user-show{
+  width: 100%;
+  height: auto;
+  background:url(tetris2.jpg) center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
