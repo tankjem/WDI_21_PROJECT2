@@ -1,12 +1,12 @@
-
+<h2 class="static-sub-font">Comments:</h2>
   <% @post.comments.each do |comment| %>
-  <div class="comment">
-  <h2 class="static-sub-font">Comments:</h2>
+<div class="comment">
+  
   <br>
       <h3><%=comment.title %></h3>
-      <p><%=comment.content %></p>
-      <p><small>Added by <%= comment.user.username %></small></p>
-      <small class="text-muted"><%= distance_of_time_in_words(Time.now, comment.created_at) %> ago</small></p>
+      <p class="navbar-brand"><%=comment.content %></p>
+      <p class="static-register-font"><small>Added by <%= comment.user.username %></small></p>
+      <small><%= distance_of_time_in_words(Time.now, comment.created_at) %> ago</small></p>
       <br>
       <% if comment.user_id == current_user.id %>
       <h6 class="static-register-font"> <%= link_to 'Destroy', comment_path(comment, post_id: @post.id), method: :delete, data: { confirm: 'Are you sure?' } %></h6>
@@ -21,12 +21,12 @@
 <%= f.hidden_field :post_id, value: @post.id %>
   
 <fieldset class="form-group">
-  <%= f.label :title, class:"new-label" %><br />
+  <%= f.label :title, class:"static-register-font" %><br />
   <%= f.text_field :title, class:"form-control" %>
 </fieldset>
 
 <fieldset class="form-group">
-  <%= f.label :content, class:"new-label" %><br />
+  <%= f.label :content, class:"static-register-font" %><br />
   <%= f.text_area :content, class:"form-control" %>
 </fieldset>
   
@@ -34,4 +34,5 @@
     <%= f.submit %>
   </div>
 <% end %>
+<br>
 </div>

@@ -18,14 +18,35 @@
 
 body {
  margin: 0 auto;
- color: white;
-
- 
+ color: black;
  -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;
 }
+footer{
+  background-color:#02c4ae;
+  text-align: center;
+  font-family: 'Cairo', sans-serif;
+  color: #FF9900;
+    font-size: 20px;
+    -webkit-animation: neon5 1.5s ease-in-out infinite alternate;
+      -moz-animation: neon5 1.5s ease-in-out infinite alternate;
+      animation: neon5 1.5s ease-in-out infinite alternate;
+  
+}
 
+nav.navbar.navbar-light.bg-faded {
+  background-color:  #02c4ae;
+  // -webkit-animation: neon5 1.5s ease-in-out infinite alternate;
+  //   -moz-animation: neon5 1.5s ease-in-out infinite alternate;
+  //   animation: neon5 1.5s ease-in-out infinite alternate;
 
+  }
+
+li.nav-item{
+
+  font-size:25px;
+}
+  
 .container-fluid {
  width: 100%;
  height: 100vh;
@@ -88,8 +109,9 @@ body {
 
 
 .static-font{
+
 font-family: 'Bungee Inline', cursive;
-font-size: 80px;
+font-size: 60px;
 color: #228DFF;
  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
@@ -112,7 +134,7 @@ color: #228DFF;
 .static-sub-font{
   font-family: 'Bungee Inline', cursive;
   color: #FF9900;
-  font-size: 30px;
+  font-size: 25px;
   -webkit-animation: neon5 1.5s ease-in-out infinite alternate;
     -moz-animation: neon5 1.5s ease-in-out infinite alternate;
     animation: neon5 1.5s ease-in-out infinite alternate;
@@ -173,16 +195,23 @@ color: #228DFF;
   color: #fff; 
 }
 .card-title{
-  color: white;
+  color: black;
   font-family: 'Cairo', sans-serif;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 40px;
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
 
 }
 .card-text{
-  color: white;
+  color: black;
   font-family: 'Cairo', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 30px;
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
 }
 h1 {
   color: white;
@@ -205,7 +234,9 @@ button {
   padding: 10px 20px;
 }
 .navbar-brand{
-  font-family: 'Bungee Inline', cursive;
+  font-family: 'Cairo', cursive;
+  font-weight:700;
+  font-size: 30px;
   color: #228DFF;
    -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
    -moz-animation: neon2 1.5s ease-in-out infinite alternate;
@@ -217,13 +248,14 @@ button {
  font-family: 'Cairo', sans-serif;
  font-weight:900;
  display:inline-block;
- color: black;
+ // color: black;
  
  margin-left:1%;
 }
 .dropdown-menu{
-  margin-left: 10%;
+  margin-left: 12%;
   font-family: 'Cairo', sans-serif;
+  // width: 150px;
   font-weight: 600;
 
 }
@@ -232,26 +264,23 @@ button {
 text-align: center;
 font-family: 'Cairo', sans-serif;
 }
-// .card-columns {
-//   @include media-breakpoint-only(lg) {
-//     column-count: 3;
-//   }
-//   @include media-breakpoint-only(xl) {
-//     column-count: 4;
-//   }
-// }
+.card-block{
+  display:inline-block;
+}
+
 #user-card{
   display: inline-block;
   margin-left: 50%;
   transform: translate(-50%);
   border-radius: 15%;
   border-style: none;
+  background-color: transparent;
   font-family: 'Cairo', sans-serif;
 
 }
 .comment {
   font-size: 20px;
-  width: 20%;
+
   display: inline-block;
   margin: 5px auto;
   text-align: center;
@@ -259,20 +288,18 @@ font-family: 'Cairo', sans-serif;
   font-weight: 700;
 }
 .new-comment{
- 
-  width:40%;
-  margin: 5px 5px;
-  float: right;
+ text-align: center;
+  // float: right;
+  max-width: 100%;
+  height: auto;
   font-family: 'Cairo', sans-serif;
 }
 .comment-container{
   width:100%;
   height: auto;
-  background-color: black;
+  background-color: transparent;
   display: inline-block;
-  border: 1px solid black;
-  border-radius: 1%;
-
+  text-align: center;
 }
 #image-card{
   max-width: 100%;
@@ -281,6 +308,7 @@ font-family: 'Cairo', sans-serif;
   border: transparent;
   background-color: transparent;
   font-family: 'Cairo', sans-serif;
+  color: black;
 
 }
 #image-show-card{
@@ -289,7 +317,7 @@ font-family: 'Cairo', sans-serif;
   font-family: 'Cairo', sans-serif;
   border-style: none;
   background-color: transparent;
-  color: white;
+  
 }
 #image-show-card img{
   max-width: 100%;
@@ -331,9 +359,19 @@ img {
 .user-show{
   width: 100%;
   height: auto;
-  background:url(tetris2.jpg) center center;
+  background: url(abstract.jpg) center center;
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+.static-header-font{
+  font-family: 'Cairo', cursive;
+  font-weight: 700;
+  color: #02c4ae;
+  font-size: 25px;
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+    animation: neon2 1.5s ease-in-out infinite alternate;
 }

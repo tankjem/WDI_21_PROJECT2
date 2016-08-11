@@ -8,25 +8,26 @@
       <% if current_user %>
         <%= link_to "GameSnap", user_path(current_user), class: "navbar-brand" %>
         <li class="nav-item-dropdown">
-        <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username %></a>
+        <a class="nav-link dropdown-toggle active static-header-font" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username %></a>
         <div class="dropdown-menu">
           <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
              <div class="dropdown-divider"></div>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
-          </li>
+          </li> 
         <li class="nav-item-dropdown">
-          <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">ART</a>
+          <a class="nav-link dropdown-toggle active static-header-font" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">ART</a>
           <div class="dropdown-menu">
           <%= link_to "Art Gallery", posts_path, class:"dropdown-item"%> 
+          <div class="dropdown-divider"></div>
           <%= link_to "New Art", new_post_path, class:"dropdown-item"%> 
           </div>
           </li>
       <% else %>
-        <li class="nav-item"><%= link_to "Home", root_path %></li>
-        <li class="nav-item"><%= link_to "About", about_path %></li>
-        <li class="nav-item"><%= link_to "Sign In", new_user_session_path %></li>
-        <li class="nav-item"><%= link_to "Register", new_user_registration_path %></li>
+        <li class="nav-item static-register-font"><%= link_to "Home", root_path %></li>
+        <li class="nav-item static-register-font"><%= link_to "About", about_path %></li>
+        <li class="nav-item static-register-font"><%= link_to "Sign In", new_user_session_path %></li>
+        <li class="nav-item static-register-font"><%= link_to "Register", new_user_registration_path %></li>
       <% end %>
     </ul>
     
