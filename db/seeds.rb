@@ -198,4 +198,3 @@ comment17 = Comment.create!(title:"Testing Testing", content:"No your're the bes
 comment18 = Comment.create!(title:"Testing Testing", content:"No your're the best!", user_id: user2.id, post_id: post18.id)
 comment19 = Comment.create!(title:"Testing Testing", content:"No your're the best!", user_id: user1.id, post_id: post18.id)
 comment20 = Comment.create!(title:"Testing Testing", content:"No your're the best!", user_id: user2.id, post_id: post1.id)
-
